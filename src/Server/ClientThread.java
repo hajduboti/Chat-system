@@ -57,7 +57,7 @@ class ClientThread extends Thread {
             //os.println("");
             while (true) {
                 String line = is.readLine();
-                if (line.startsWith("/quit")) {
+                if (line.startsWith("QUIT")) {
                     break;
                 }
                 synchronized (this) {
