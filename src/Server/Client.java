@@ -13,7 +13,7 @@ public class Client implements Runnable {
 
     private static Socket clientSocket;
     private static PrintStream os;
-    private static DataInputStream is = null;
+    private static DataInputStream is;
     private static BufferedReader inputLine;
     private static boolean closed;
 
@@ -29,9 +29,9 @@ public class Client implements Runnable {
             is = new DataInputStream(clientSocket.getInputStream());
 
         } catch (UnknownHostException e) {
-            System.err.println("Don't know about IP " + host);
+            System.out.println("Don't know about IP " + host);
         } catch (IOException e) {
-            System.err.println("Couldn't get I/O for the connection to the host " + host);
+            System.out.println("Couldn't get I/O for the connection to the host " + host);
         }
 
         if (clientSocket != null && os != null && is != null) {
@@ -45,7 +45,7 @@ public class Client implements Runnable {
                 is.close();
                 clientSocket.close();
             } catch (IOException e) {
-                System.err.println("IOException:  " + e);
+                System.out.println("IOException:  " + e);
             }
         }
     }
@@ -62,7 +62,7 @@ public class Client implements Runnable {
             }
             closed = true;
         } catch (IOException e) {
-            System.err.println("IOException:  " + e);
+            System.out.println("IOException:  " + e);
         }
     }
 

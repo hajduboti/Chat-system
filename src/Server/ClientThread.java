@@ -10,10 +10,10 @@ import java.util.Set;
 
 class ClientThread extends Thread {
 
-    private String clientName = null;
-    private DataInputStream is = null;
-    private PrintStream os = null;
-    private Socket clientSocket = null;
+    private String clientName;
+    private DataInputStream is;
+    private PrintStream os;
+    private Socket clientSocket;
     private final ClientThread[] threads;
     private int maxClientsCount;
     private Set<String> clients = new HashSet<>();
@@ -53,6 +53,7 @@ class ClientThread extends Thread {
                     }
                 }
             }
+
             //os.println("");
             while (true) {
                 String line = is.readLine();

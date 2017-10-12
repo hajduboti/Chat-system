@@ -15,9 +15,6 @@ public class Server {
         private static ClientThread[] threads = new ClientThread[maxClientsCount];
         private static Set<String> clients = new HashSet<>();
 
-
-
-
     public static void main(String args[]) {
 
         int portNumber = 2321;              // The default port number.
@@ -50,4 +47,3 @@ public class Server {
             }
         }
     }
-
